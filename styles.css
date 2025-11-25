@@ -106,7 +106,6 @@ nav {
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-
 }
 
 .nav-container {
@@ -119,9 +118,21 @@ nav {
 }
 
 .logo-nav {
+    display: flex;
+    align-items: center; 
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--white);
+    text-decoration: none; 
+}
+
+/* imagem no nav */
+.logo-nav img{
+    width: 50px;
+    height: 50px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    margin-right: 10px; 
 }
 
 .nav-links {
@@ -403,13 +414,50 @@ footer {
     color: var(--white);
     padding: 3rem 20px;
     text-align: center;
-
 }
 
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* --- NOVAS CLASSES PARA O FOOTER TIPO STEAM --- */
+
+.footer-top-section {
+    display: flex;
+    justify-content: space-between; /* Espaça as logos e o texto central */
+    align-items: center; /* Alinha verticalmente */
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    /* Use uma borda sutil no topo para separar, se quiser */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.footer-logo-container {
+    flex: 0 0 auto; /* Não cresce, não encolhe, largura automática */
+    padding: 0 20px;
+}
+
+.footer-logo-container img {
+    width: auto; /* Mantém a proporção */
+    height: 100px; /* Define um tamanho padrão para as logos */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-container img:hover {
+    opacity: 1;
+}
+
+.footer-text-center {
+    flex: 1; /* Permite que o texto ocupe o espaço restante */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    max-width: 600px;
+    text-align: center;
+    color: var(--gray); /* Cor mais clara para texto de rodapé */
+}
+/* ----------------------------------------------- */
 
 .footer-logo {
     font-size: 2rem;
@@ -477,5 +525,15 @@ footer {
     .category-btn {
         width: 100%;
         max-width: 250px;
+    }
+    
+    /* Responsividade do Footer */
+    .footer-top-section {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .footer-logo-container {
+        padding: 0;
     }
 }
